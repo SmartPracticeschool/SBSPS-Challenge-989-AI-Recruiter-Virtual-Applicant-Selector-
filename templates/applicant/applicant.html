@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="./static/css/applicanthome.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.5.1.js"
+  integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  crossorigin="anonymous"></script>
+  <title>Applicant Homepage</title>
+</head>
+<body>
+  <nav class="navbar">
+        <div class="logo">
+                <h1><a href="/">Virtual Applicant Selector</a></h1>
+        </div>
+        <div class="logo2">
+            {% if var == 'apply' %}
+                <a href="/already applied jobs" class="btn">See All Applied jobs</a>
+            {% else %}
+                <a href="/applicantHomePage" class="btn">Look For New jobs</a>
+            {% endif %}
+            <a href="/logout"><i class="fas fa-sign-out-alt"></i></a>       
+        </div>
+  </nav>
+   
+  <div class="container"><h1>Welcome {{user}}</h1></div>
+
+    <div class="container1">
+              <div class="rows">        
+      {% if var == 'apply' %}                
+
+                {% for job in results %}
+
+                          {% if uid not in job['users'] %}
+                          {% set skills = ', ' %}
+
+                        <div class="card-container">
+                            <div class="card">
+                                <div class="front">
+                                  {% if loop.index%2 == 0 %}
+                                    <img src="./static/img/clogo2.jpg" alt="Company logo">
+                                  {% else %}
+                                    <img src="./static/img/clogo1.png" alt="Company logo">
+                                  {% endif %}
+                                        <h1>{{job['company']}}</h1>
+                                        {% for companies in companies %}
+                                        {% if companies['doc']['company_name'] == job['company'] %}
+
+                                        <p>{{companies['doc']['des']}}</p>
+
+                                        {% endif %}
+                                        {% endfor %}
+                                  
+                                </div>
+                                <div class="back">
+                                    <span class="bold1">{{job['title']}}</span>
+                                    <p class="card-text">
+                                      <br>
+                                      <span class="bold">Min Experience Required : </span><span class="not-bold">{{job['experience']}}</span>
+                                      <br>
+                                      <span class="bold">Skills Required : </span><span class="not-bold">{{skills.join(job['skills'])}}</span>
+                                      <br>
+                                      <span class="bold">How to Apply: </span><span class="not-bold">Upload your CV/Resume and give one Aptitude test, Technical Test and an Interview.</span><br>
+                                     </p>
+                                     <a href="/applying for job id={{job['_id']}}" class="btn1">Apply</a>
+                                </div>
+                            </div>
+                        </div>
+
+                          {% endif %}
+                {% endfor %}  
+
+      {% else %}                          
+
+                {% for job in results %}
+
+                          {% if uid in job['users'] %}
+                          {% set skills = ', ' %}
+                        
+                        <div class="card-container">
+                            <div class="card">
+                                <div class="front">
+                                  {% if loop.index%2 == 0 %}
+                                    <img src="./static/img/clogo2.jpg" alt="Company logo">
+                                  {% else %}
+                                    <img src="./static/img/clogo1.png" alt="Company logo">
+                                  {% endif %}
+                                        <h1>{{job['company']}}</h1>
+                                        {% for companies in companies %}
+                                        {% if companies['doc']['company_name'] == job['company'] %}
+
+                                        <p>{{companies['doc']['des']}}</p>
+
+                                        {% endif %}
+                                        {% endfor %}
+                                </div>
+                                <div class="back">
+                                    <span class="bold1">{{job['title']}}</span>
+                                    <p class="card-text">
+                                      <br>
+                                      <span class="bold">Min Experience Required : </span><span class="not-bold">{{job['experience']}}</span>
+                                      <br>
+                                      <span class="bold">Skills Required : </span><span class="not-bold">{{skills.join(job['skills'])}}</span>
+                                      <br><br>
+                                      <span class="bold">Your Overall Marks : </span><span class="not-bold">{{userInfo[job['_id']]['overall_marks']}}/40</span>
+                                     </p>
+                                     <button style="cursor: none;" class="btn1">{{userInfo[job['_id']]['status']}}</button>
+                                </div>
+                            </div>
+                        </div>
+                          {% endif %}
+                {% endfor %}  
+
+      {% endif %}
+
+             </div>
+        </div>
+</body>
+</html>

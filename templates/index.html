@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/style.css">
+    <title>Virtual Applicant Selector</title>
+</head>
+<body>
+    <header class="headers"> 
+        <nav>
+            <div class="logo">
+                <h1>Virtual Applicant Selector</h1>
+            </div>
+            <div class="lists">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a href="" class="nav-link">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#comp" class="nav-link">FEATURES</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact-us" class="nav-link">CONTACT-US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/login" class="nav-link">LOGIN/SIGNUP</a>
+                    </li>
+                </ul>
+            </div>
+            
+        </nav>
+    <section>
+        <div class="left-side">
+            <img src="./static/img/logo4.svg">
+        </div>
+        <div class="right-side">
+            <h1>Best Website for the COMPANY and APPLICANT to meet each other</h1>
+            <p>We are the connecting bridge between company and applicant</p>
+        </div>
+    </section>
+    </header>
+    
+      
+    <section class="comp" id="comp">
+                <div id="topic">
+                    <h1>Features for Companies</h1>
+                    <span class="colors">3 Step Process to get best applicant</span>
+                    <div class="container">
+                        <div class="card-container">
+                            <div class="card">
+                                <figure class="front">
+                                    <img src="./static/img/logo2.svg" alt="">
+                                    <h3>Step 1 ~ Resume Analysis </h3>
+                                </figure>
+                                <figure class="back">
+                                    <p>The company have to create an account with us and needs to create job profile and applicant needs to upload his resume which will be analysed using machine learning and we will rank their resume.</p>
+                                </figure>
+                            </div>
+                        </div>
+                        
+                        <div class="card-container">
+                            <div class="card">
+                                <figure class="front">
+                                    <img src="./static/img/logo3.svg" alt="">
+                                    <h3>Step 2 ~ Online Tests</h3>
+                                </figure>
+                                <figure class="back">
+                                    <p>Aptitude and Techincal Tests will be conducted for the applicant. The company can choose our questions sets or can even create its own question sets for the tests. The applicant will answer them and it will be added to their particular ranks.</p>
+                                </figure>
+                            </div>
+                        </div>
+                        
+                        <div class="card-container">
+                            <div class="card">
+                                <figure class="front">
+                                    <img src="./static/img/logo.svg" alt="">
+                                    <h3>Step 3 ~ Virtual Interview </h3>
+                                </figure>
+                                <figure class="back">
+                                    <p>For the final step the applicant have to give a virtual interview with our AI chatbot. Our chatbot will then rank the answers given by the applicant and the applicant will have an overall rank which will help the company to choose the applicant with the best rank.</p>
+                                </figure>
+                            </div>
+                        </div>
+                    </div>  
+                </div>
+               
+    </section>
+        
+    <section class="app" id="app">
+                <div id="topic1">
+                    <h1>Features for Applicants</h1>
+                    <div class="container">
+                        <div class="card-container">
+                            <div class="card1">
+                                <figure class="front">
+                                    <img src="./static/img/logo6.svg" alt="">
+                                    <h3>Different companies one platform</h3>
+                                </figure>
+                                <figure class="back">
+                                    <p>We are giving applicant an opportunity to choose any company he/she likes.We are providing different companies in one platform which will make applicants life easier to apply for any company at one platform.</p>
+                                </figure>
+                            </div>
+                        </div>
+
+                        
+                        <div class="card-container">
+                            <div class="card1">
+                                <figure class="front">
+                                    <img src="./static/img/logo5.svg" alt="">
+                                    <h3>One Resume Format</h3>
+                                </figure>
+                                <figure class="back">
+                                    <p>The applicants can submit his/her resume of their personal choice for the job application. We are not like other platforms to create resume like in a kind of form.</p>
+                                </figure>
+                            </div>
+                        </div>
+
+                        <div class="card-container">
+                            <div class="card1">
+                                <figure class="front">
+                                    <img src="./static/img/logo7.svg" alt="">
+                                    <h3>Keep Track Of The Applied Jobs</h3>
+                                </figure>
+                                <figure class="back">
+                                    <p>The applicants can easily keep track of their status in different jobs for which they have applied i.e. whether they are hired or disqualified or he/she is not yet approved.</p>
+                                </figure>
+                            </div>
+                        </div>
+
+                    </div>  
+                </div>
+    </section>
+    
+   
+    
+    <footer id="contact-us">
+        <div class="footer-header">
+            <h1>We'd Love to hear from you</h1>
+            <img src="./static/img/contact.svg" alt="">
+        </div>
+        
+
+        <div class="forms">
+            <h3>Get in Touch with us</h3>
+            <form action="/action_page.php">
+                <label for="name">Name</label>
+                <br>
+                <input type="text" id="name" name="name" placeholder="Your name..">
+                <br>
+                <label for="email">Email</label>
+                <br>
+                <input type="email" id="email" name="email" placeholder="Your email here..">
+                <br>
+                <label for="subject">Your Message</label>
+                <br>
+                <textarea id="subject" name="subject" placeholder="Write your message here.." style="height:100px"></textarea>
+                <br>
+                <button class="btn1" type="submit">Submit <i class="fas fa-smile-wink"></i></button>
+          </form>
+        </div>
+        
+    </footer>
+    <script type="text/javascript">
+        var text = document.getElementById('text');
+        var word = text.getElementsByTagName('span');
+        var i=0;
+        function rotator(){
+            word[i].style.display = 'none';
+            i=(i+1)% word.length;
+            word[i].style.display ='initial';
+        }
+        setInterval(rotator,1500);
+    </script>
+</body>
+</html>

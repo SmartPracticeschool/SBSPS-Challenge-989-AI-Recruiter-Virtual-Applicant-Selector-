@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <link rel="stylesheet" href="./static/css/create_que.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <title>Create {{type}} Question Set</title>
+    <script type="text/javascript">
+        window.history.forward(); 
+        function noBack() { 
+            window.history.forward(); 
+        } 
+    </script>
+</head>
+<body>
+     <div class="logo">
+                <h1>Virtual Applicant Selector</h1>
+     </div>
+    <div class="container">
+         <div class="card-title">
+              <h1 class="title">{{type}} Question Bank</h1>
+        </div>
+
+       
+         <form id="form-control" method="POST">
+             <div class="form-control">
+                   <!-- <label class="label" for="Question'.$no.'">Question</label> -->
+                   <input type="text" placeholder="Question {{no}}/10" name="question" required="">
+             </div> 
+           <div>
+               <label for="answer"></label>
+               <select id="select" class="fa" name="correct" required>
+                    <option value="" class="fa" selected disabled>Choose Correct Answer</option>
+                    <option value="option1">Option 1</option>
+                    <option value="option2">Option 2</option>
+                    <option value="option3">Option 3</option>
+                    <option value="option4">Option 4</option>
+               </select>
+           </div>
+           
+            <br>
+            <div id="form-control2">
+                  <table style="width: 100%;">
+                    <tr>
+                      <td width="20px"><i class="fas fa-check-circle icon"></i></td>      
+                      <td><input type="text" placeholder="Option 1" name="option1" required="" /></td>
+                    </tr>
+                    <tr>
+                      <td width="20px"><i class="fas fa-check-circle icon"></i></td>      
+                      <td><input type="text" placeholder="Option 2" name="option2" required="" /></td>
+                    </tr>                    
+                    <tr>
+                      <td width="20px"><i class="fas fa-check-circle icon"></i></td>      
+                      <td><input type="text" placeholder="Option 3" name="option3" required="" /></td>
+                    </tr>
+                    <tr>
+                      <td width="20px"><i class="fas fa-check-circle icon"></i></td>      
+                      <td><input type="text" placeholder="Option 4" name="option4" required="" /></td>
+                    </tr>                    
+                  </table>
+              </div>
+
+            
+           <div class="btns">
+                <div class="btn"><button name="add" type="submit">Save and Next</button></div>
+              </div>
+
+       </form>
+    </div>
+</body>
+</html>

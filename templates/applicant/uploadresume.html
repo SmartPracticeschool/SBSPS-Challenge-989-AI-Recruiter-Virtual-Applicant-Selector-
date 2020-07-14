@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Resume</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./static/css/uploadresume.css">
+        
+</head>
+<body>
+    <div class="logo">
+                <h1>Virtual Applicant Selector</h1>
+     </div>
+     
+      <div id="popup">
+      <div class="modal-header">
+        <h1 class="heading">{{ job }}
+          </h1>
+      </div>
+      <div class="modal-body">
+          <form id="form" method="POST" action="" enctype="multipart/form-data">
+                <br>
+                <input type="file" accept=".pdf" id="file" name="doc" required/>
+                <label for="file" class="btn-2">Upload Your Resume</label>
+                <span id="filename">No Resume Chosen, yet.</span>
+            <br>
+            <br>
+            <div class="btn">
+                    <button class="modal-btn1" id="btn">Next  <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </form>
+      </div>     
+    </div>
+
+    <script type="text/javascript">
+          document.getElementById('file').onchange = function () {
+          var name = this.value.match(/[-_\w]+[.][\w]+$/i)[0];
+          var ext = name.split('.').pop();
+          if(ext == 'pdf') {
+            document.getElementById('btn').setCustomValidity('')
+            document.getElementById('filename').innerHTML = name;
+            document.getElementById('btn').onclick = function() {
+              alert('To begin your Aptitude Test, click OK.');
+            };
+          }
+          else {
+            document.getElementById('btn').setCustomValidity('Please upload .pdf file only.')
+          }
+        };
+    </script>
+    
+</body>
+</html>

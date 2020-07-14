@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    {% if type == 'created' %}
+        <meta http-equiv="refresh" content="5;url=/companyHomePage" />
+    {% else %}
+        <meta http-equiv="refresh" content="5;url=/applicantHomePage" />
+    {% endif %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <link rel="stylesheet" href="./static/css/thankyou.css">
+    <title>Completed</title>
+</head>
+<body>
+     <div class="logo">
+                <h1>Virtual Applicant Selector</h1>
+     </div>
+    <div class="container">
+      {% if type == 'created' %}
+       <h1 class="ml6">
+          <span class="text-wrapper">
+            <span class="letters">Job Title Has Been Successfully Created !</span>
+          </span>
+        </h1>
+        <a href="/companyHomePage">Go to your homepage</a>
+    {% else %}
+       <h1 class="ml6">
+          <span class="text-wrapper">
+            <span class="letters">Your Response Has Been Successfully Recorded !</span>
+          </span>
+        </h1>
+        <span class="text">You will be notified about your selection through mail by the company.</span>
+        <a href="/applicantHomePage">Go to your homepage</a>
+    {% endif %}
+    </div> 
+
+<script>
+    // Wrap every letter in a span
+var textWrapper = document.querySelector('.ml6 .letters');
+textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+anime.timeline({loop: false})
+  .add({
+    targets: '.ml6 .letter',
+    translateY: ["1.1em", 0],
+    translateZ: 0,
+    duration: 750,
+    delay: (el, i) => 50 * i
+  });
+    </script>
+</body>
+</html>
+

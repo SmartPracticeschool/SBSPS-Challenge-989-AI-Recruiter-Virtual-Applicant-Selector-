@@ -1,0 +1,73 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "Hello", "Good morning", "good evening", "good afternoon", "hey"],
+         "responses": ["How are you ?", "How have you been ?", "What have you been upto now ?", "How's your day going ?"],
+         "context_set": ""
+        },
+
+        {"tag": "iamfine",
+         "patterns": ["I am fine", "i am doing great", "awesome", "i am ok", "i am good", "best", "good", "cool", "great"],
+         "responses": ["That's great !"],
+         "context_set": ""
+        },
+
+        {"tag": "meaning",
+         "patterns": ["it simply means", "i myself don't know but as much as i know it means", "it's just", "the meaning of my name is", "it means that", "well, basically it means", "it is something related to"],
+         "responses": ["That's a very good name !", "You have a good name !", "Wonderful, It's such a nice name !", "Great, I liked your name !", "Nice name !", "I liked your name, it's new to me.", "I liked your name !"],
+         "context_set": ""
+        },
+
+        {"tag": "thanks",
+         "patterns": ["thankyou", "thanks", "so nice of you", "thank you", "compliment", "so sweet of you"],
+         "responses": ["You're Welcome", "yeah"],
+         "context_set": ""
+        },
+
+        {"tag": "personality",
+         "patterns": ["pq1", "pq2", "pq3", "pq4", "pq5"],
+         "responses": ["Answer please."],
+         "context_set": ""
+        },
+        {"tag": "theory",
+         "patterns": ["What is a Firewall ?", "What is meant by 127.0.0.1 ?", "Why can Bluetooth Equipment integrate Easily in TCP/IP network ?", "How do I convert a numeric IP address, 192.18.97.39 into a hostname like Java.sun.com ?", "Define Pipelining ?", "Define Brouter ?", "What is kernel ?", "What is the use of paging in operating system ?", "What is spooling ?", "What is a folder in Ubuntu ?", "What is a daemon ?", "What do you mean by transparent DBMS ?", "What do you understand by query optimization ?", "What do you understand by Proactive Update ?", "What do you understand by Retroactive Update ?", "How can you perform pattern matching in SQL ?", "What do you mean by Index Hunting ?", "Write the postfix form of the expression - (A + B) * (C - D).", "Which notations are used in Evaluation of Arithmetic Expressions using prefix and postfix forms ?", "Explain the jagged array.", "Define Hashing ?", "Which data structure is used in BFS algorithm ?"],
+         "responses": ["Answer please."],
+         "context_set": ""
+        },
+        
+        {"tag": "python",
+         "patterns": ["How is Python an interpreted language ?", "What is pep 8 ?", "How is memory managed in Python ?", "What is namespace in Python ?", "What is __init__ ?", "What are the generators in python ?", "What is the purpose of PYTHONPATH environment variable ?", "What is a Python module ?", "What do you understand by Tkinter ?", "Explain the use of the 'with' statement and its syntax.", "How to comment multiple lines in python ?", "What does this mean - *args, **kwargs? And why would we use it ?", "Does Python have OOPS concepts ?", "What is the difference between deep and shallow copy ?"],
+         "responses": ["Answer please."],
+         "context_set": ""
+        },
+
+        {"tag": "hcss",
+         "patterns": ["What is a marquee ?", "What is the use of 'blockquote' tag ?", "What is SVG ?", "What is datalist tag ?", "Name some new features which were not present in HTML but are added in HTML5 ?", "Why Meta tags are used in HTML ?", "What would happen if the HTML Document does not contain '!DOCTYPE' ?", "What is a Manifest file ?", "Explain the concept of Tweening.", "What is CSS flexbox ?", "What is the difference between padding and margin ?", "What is at-rule ?", "How does Z-index works ?"],
+         "responses": ["Answer please."],
+         "context_set": ""
+        },
+
+        {"tag": "js",
+         "patterns": ["What is the use of window object ?", "What is the difference between JavaScript and JScript ?", "What does the isNaN() function ?", "What is this [[[]]] ?"],
+         "responses": ["Answer please."],
+         "context_set": ""
+        },
+
+        {"tag": "interview",
+         "patterns": ["Why do you want to work at our company ?", "What is the difference between hard work and smart work ?", "Who has inspired you in your life and why ?", "If you won $10 million lottery, would you still work ?", "Can you work under pressure ?", "What are your strengths and weaknesses ?", "Where do you see yourself five years from now ?", "What can we expect from you in your first three months ?", "Give me an example of your creativity."],
+         "responses": ["Why did you resign from your previous job ?", "Tell me about the most boring job you have ever had.", "How many hours a week do you normally work ?", "What was the toughest challenge you have ever faced ?", "What would you say to your boss if he is crazy about an idea, but you think it stinks ?", "How could you have improved your career progress ?", "Looking back on your last position, have you done your best work ?", "How do you feel about reporting to a younger person ?"],
+         "context_set": ""
+        },
+
+        {"tag": "goodbye",
+         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
+         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
+         "context_set": ""
+        },
+
+        {"tag": "name",
+         "patterns": ["what is your name", "what should I call you", "whats your name?"],
+         "responses": ["You can call me Tim.", "I'm Tim!", "I'm Tim aka Tech With Tim."],
+         "context_set": ""
+        }
+   ]
+}

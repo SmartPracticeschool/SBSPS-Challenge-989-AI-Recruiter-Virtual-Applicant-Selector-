@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge"> 
+    <link rel="stylesheet" href="./static/css/answer.css">
+    <title>{{var}} Test</title>
+    <script type="text/javascript">
+        window.history.forward(); 
+        function noBack() { 
+            window.history.forward(); 
+        } 
+    </script>
+</head>   
+<body>
+   <div class="logo">
+                <h1>Virtual Applicant Selector</h1>
+    </div>
+   <div class="container">
+        
+        <div class="card-title">
+                     <h1 class="title">
+                      {{var}} Test
+                      <p id="countdown"></p>
+                     </h1>
+        </div>
+
+        
+          <form id="form" class="form" method="POST">
+
+                  <div class="form-control">
+
+                {% for que in results %}
+                      
+                    <div class="que" style="color: white;"><b>Que {{loop.index}}:</b> {{que['doc']['que']}}</div>
+                    <input type="hidden" name="que{{loop.index}}" value="{{que['doc']['que']}}">
+                    <label class="radio">{{que['doc']['opt1']}}
+                      <input type="radio" name="ans{{loop.index}}" value="{{que['doc']['opt1']}}"  id="x">
+                      <span class="radiomark"></span>
+                    </label>
+                    <label class="radio">{{que['doc']['opt2']}}
+                      <input type="radio" name="ans{{loop.index}}" value="{{que['doc']['opt2']}}"  id="x">
+                      <span class="radiomark"></span>
+                    </label>
+                    <label class="radio">{{que['doc']['opt3']}}
+                      <input type="radio" name="ans{{loop.index}}" value="{{que['doc']['opt3']}}"  id="x">
+                      <span class="radiomark"></span>
+                    </label>
+                    <label class="radio">{{que['doc']['opt4']}}
+                      <input type="radio" name="ans{{loop.index}}" value="{{que['doc']['opt4']}}"  id="x">
+                      <span class="radiomark"></span>
+                    </label>
+
+                    {% endfor %}
+
+            </div>
+  
+        <div class="btn">
+          {% if var == 'Aptitude' %}
+          <button name="submit" type="submit" onclick="confirm('To begin your Technical Test, click OK.')">Submit</button> 
+          {% else %}
+          <button name="submit" type="submit" onclick="confirm('To begin your Interview, click OK.')">Submit</button> 
+          {% endif %}
+          
+        </div> </form>
+
+    </div>
+        
+        <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+        <script>
+
+        const startingMinutes = 10;
+        let time = startingMinutes * 60;
+        const countdownEl = document.getElementById('countdown');
+        setInterval(updateCountdown,1000);
+        function updateCountdown(){
+            const minutes = Math.floor(time/60);
+            let seconds = time%60;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            countdownEl.innerHTML = `${minutes} : ${seconds}`;
+            time--;
+            if(minutes == 0 && seconds == 00) {
+              countdownEl.style.display = "none";
+              alert("Time's Up !\nSubmit the test to proceed further.");
+              $("#form :input[type=radio]").prop("disabled", true);
+            }
+        }
+    </script>    
+
+
+</body>
+</html>

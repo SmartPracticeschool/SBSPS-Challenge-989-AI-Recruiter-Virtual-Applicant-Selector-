@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/css/registration.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Registration</title>
+    <script type="text/javascript">
+	    function filter() {
+	    var myval = document.getElementById("typeId").value;
+	    if(myval == '1') {
+	    	document.getElementById('form1').style.display = "block";
+	    	document.getElementById('form2').style.display = "none";
+	    	document.getElementById('cname').required = false;
+	    	document.getElementById('cdetails').required = false;
+	    	document.getElementById('cemail').required = false;
+	    	document.getElementById('cpassword').required = false;
+	    	document.getElementById('cpassword2').required = false;
+			document.getElementById('aname').required = true;
+	    	document.getElementById('aemail').required = true;
+	    	document.getElementById('agender').required = true;
+	    	document.getElementById('apassword').required = true;
+	    	document.getElementById('apassword2').required = true;
+	    }
+	    else {
+	    	document.getElementById('form2').style.display = "block";
+	    	document.getElementById('form1').style.display = "none";
+	    	document.getElementById('cname').required = true;
+	    	document.getElementById('cdetails').required = true;
+	    	document.getElementById('cemail').required = true;
+	    	document.getElementById('cpassword').required = true;
+	    	document.getElementById('cpassword2').required = true;
+			document.getElementById('aname').required = false;
+	    	document.getElementById('aemail').required = false;
+	    	document.getElementById('agender').required = false;
+	    	document.getElementById('apassword').required = false;
+	    	document.getElementById('apassword2').required = false;
+	    }
+	  }    	
+    </script>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10 offset=md-1">
+				<div class="row">
+					<div class="col-md-5 register-left">
+						<i class="fas fa-arrow-down"></i>
+						<h3>Join Us</h3>
+						<p>Virtual Applicant Recruitor to achieve dream job!</p>
+						<a href="/login"><button type="button" class="btn btn-primary">Login</button></a>
+
+						
+					</div>
+					<div class="col-md-7 register-right">
+				        <form action="" id="form-grp" method="POST" enctype="multipart/form-data">
+				        <h2>Registration for -> <select name="select" id="typeId" onchange="filter()">
+							<option value="1">Applicant</option>
+                        	<option value="2">Company</option> 
+						</select>
+                        </h2>
+						<div class="register-form" id="form1">
+						    <div class="form-group">
+								<input type="text" class="form-control" placeholder="Name *" name="aname" id="aname">
+							</div>
+							<div class="form-group">
+								<input type="email" class="form-control" placeholder="Email ID *" name="aemail" id="aemail">
+								<span class="info">*Please Provide your official email since the company will contact you with the same</span>
+							</div>
+							<div class="form-radio">
+								Choose gender *: 
+								<input type="radio" class="radio" name="agender" value="male" > Male 
+								<input type="radio" class="radio" name="agender" value="female" > Female
+	                        </div>
+							<div class="form-group">
+								<input type="password" class="form-control" placeholder="Password *" id="apassword" name="apassword"  pattern="(?=.*\d)(?=.*[a-zA-Z]).{6,}" title="Must contain at least one number and one letter, and at least 6 or more characters">
+	                        </div>
+	                        <div class="form-group">
+								<input type="password" class="form-control" placeholder="Confirm Password *" id="apassword2" >
+	                        </div>
+	                        <div class="form-group">
+								<input type="file" id="applicant_file" hidden="hidden" accept="image/*" name="photo" />
+								<button type="button" id="applicant_button" class="bttn">UPLOAD PROFILE PIC</button>
+	                            <span id="applicant_text" style="color: darkblue">No image chosen, yet.</span>
+							</div>
+							<center><b>{{ error }}</b></center>
+							<button type="submit" class="btn btn-primary">Register</button>
+						</div>
+						
+<script type="text/javascript">
+
+    const applicant_file = document.getElementById("applicant_file");
+    const applicant_button = document.getElementById("applicant_button");
+    const applicant_text = document.getElementById("applicant_text");
+
+    applicant_button.addEventListener("click", function()
+    {
+        applicant_file.click();
+    });
+
+    applicant_file.addEventListener("change", function()
+    {
+        if (applicant_file.value) {
+          var name = applicant_file.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+          var ext = name.split('.').pop();
+          if(ext == 'jpg' || ext == 'png' || ext == 'jpeg') {
+               applicant_text.innerHTML = name;
+               applicant_button.setCustomeValidity('');
+           }
+           else {
+           	   applicant_text.innerHTML = 'Please choose image file only.';
+           	   applicant_button.setCustomeValidity('Please choose image file only.');
+           }
+        }
+        else
+        {
+            applicant_text.innerHTML = "No image chosen, yet.";
+            applicant_button.setCustomeValidity('No image chosen, yet.');
+        }
+    })
+
+    var password = document.getElementById("apassword");
+    var confirm_password = document.getElementById("apassword2");
+    function validatePassword(){
+      if(password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
+    }
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
+				            
+						<div class="register-form" id="form2">
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Company Name *" name="cname" id="cname">
+							</div>
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Company Details *" name="cdetails" id="cdetails">
+							</div>
+							<div class="form-group">
+								<input type="email" class="form-control" placeholder="Email ID *" name="cemail" id="cemail">
+							</div>
+							<div class="form-group">
+								<input type="password" class="form-control" placeholder="Password *" name="cpassword" id="cpassword" pattern="(?=.*\d)(?=.*[a-zA-Z]).{6,}" title="Must contain at least one number and one letter, and at least 6 or more characters">
+	                        </div>
+	                        <div class="form-group">
+								<input type="password" class="form-control" placeholder="Confirm Password *" id="cpassword2">
+	                        </div>
+							<div class="form-group">
+								<input type="file" id="company_file" hidden="hidden" accept="image/*" name="logo"/>
+								<button type="button" id="company_button" class="bttn outline-none">UPLOAD COMPANY's LOGO</button>
+	                            <span id="company_text">No image chosen, yet.</span>
+							</div>
+							<center><b>{{ error }}</b></center>
+							<button type="submit" class="btn btn-primary">Register</button>
+						</div>
+<script type="text/javascript">
+
+    const company_file = document.getElementById("company_file");
+    const company_button = document.getElementById("company_button");
+    const company_text = document.getElementById("company_text");
+
+    company_button.addEventListener("click", function()
+    {
+        company_file.click();
+    });
+
+    company_file.addEventListener("change", function()
+    {
+        if (company_file.value) {
+          var name = company_file.value.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+          var ext = name.split('.').pop();
+          if(ext == 'jpg' || ext == 'png' || ext == 'jpeg') {
+               company_text.innerHTML = name;
+               company_button.setCustomeValidity('');
+           }
+           else {
+           	   company_text.innerHTML = 'Please choose image file only.';
+           	   company_button.setCustomeValidity('Please choose image file only.');
+           }
+        }
+        else
+        {
+            company_text.innerHTML = "No image chosen, yet.";
+            company_button.setCustomeValidity('No image chosen, yet.');
+        }
+    })
+
+    var password = document.getElementById("cpassword");
+    var confirm_password = document.getElementById("cpassword2");
+    function validatePassword(){
+      if(password.value != confirm_password.value) {
+        confirm_password.setCustomValidity("Passwords Don't Match");
+      } else {
+        confirm_password.setCustomValidity('');
+      }
+    }
+    password.onchange = validatePassword;
+    confirm_password.onkeyup = validatePassword;
+</script>
+						
+				        </form>
+						
+						
+					</div>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+	</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

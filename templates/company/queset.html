@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge"> 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+    <link rel="stylesheet" href="./static/css/queset.css">
+    <title>{{type}} Questions</title>
+</head>   
+<body>
+   <div class="logo">
+                <h1>Virtual Applicant Selector</h1>
+    </div>
+   <div class="container">
+        
+        <div class="card-title">
+                     <h1 class="title" style="float: left;">{{type}} Question Set</h1>
+                      {% if ques == 'all' %}
+                         <a href="/selected {{type}} Question Set is db for job id={{jid}}"><h1 class="next" style="padding: 0 10px">Next</h1></a>
+                      {% else %}
+                         <a href="/selected {{type}} Question Set is self for job id={{jid}}"><h1 class="next" style="padding: 0 10px">Next</h1></a>
+                      {% endif %}
+        </div>
+        <div class="card-body">
+            <h2 class="heading">
+              {% if ques=='all' %}
+              Our Question Set is shown to you from our database. <a href="/add {{type}} question 1 for job id={{jid}}" id="button">Click here</a> to <span style="color: lime">Create Your Own Question Set.</span>
+              {% if isCreated %}                
+              <br>Show your question set -> <a href="/created {{type}} Questions for job id={{jid}}" id="button">Click Here</a>
+              {% endif %}
+              {% else %}
+              Your created Question Set is shown to you. <a href="/add {{type}} question 1 for job id={{jid}}" id="button">Click here</a> to <span style="color: lime">Add More Questions.</span>
+              <br>Show our question set -> <a href="/all {{type}} Questions for job id={{jid}}" id="button">Click Here</a>              
+              {% endif %}
+              <br><br>* Only 10 questions selected randomly from the question set will be asked to the applicants.
+
+              {% if type == 'Technical' %}
+                    <br><br>Showing questions of the following skills as per the required skillset provided by you: -> <select class="skills js-example-tokenizer" name="skills" multiple="multiple" style="width: 20%;" required disabled="">{% for skill in skills %}<option selected="">{{skill}}</option>{% endfor %}</select>
+              {% endif %}
+            </h2>
+<!--               <br>To choose our question set -><a href="#" id="button">Click Here</a></p>
+ -->
+         <ol class="biglist">
+
+          {% for que in results %}
+
+          <li class="list">
+              <h3>{{que['doc']['que']}}</h3>
+               <ol type="i">
+                  {% if que['doc']['correct'] == que['doc']['opt1'] %}
+                    <li>{{que['doc']['opt1']}} <i class="fas fa-check-circle"></i> </li>
+                  {% else %}
+                    <li>{{que['doc']['opt1']}}</li>
+                  {% endif %}
+
+                  {% if que['doc']['correct'] == que['doc']['opt2'] %}
+                    <li>{{que['doc']['opt2']}} <i class="fas fa-check-circle"></i> </li>
+                  {% else %}
+                    <li>{{que['doc']['opt2']}}</li>
+                  {% endif %}
+
+                  {% if que['doc']['correct'] == que['doc']['opt3'] %}
+                    <li>{{que['doc']['opt3']}} <i class="fas fa-check-circle"></i> </li>
+                  {% else %}
+                    <li>{{que['doc']['opt3']}}</li>
+                  {% endif %}
+
+                  {% if que['doc']['correct'] == que['doc']['opt4'] %}
+                    <li>{{que['doc']['opt4']}} <i class="fas fa-check-circle"></i> </li>
+                  {% else %}
+                    <li>{{que['doc']['opt4']}}</li>
+                  {% endif %}
+              </ol> 
+          </li>
+          <hr class="style-seven">
+        {% endfor %}
+      </ol>
+        </div>
+      
+    </div>
+        
+
+<script type="text/javascript">
+          $(document).ready(function() {
+          $(".js-example-tokenizer").select2({
+              tags: true,
+              placeholder: 'put comma to seperate skills',
+              tokenSeparators: [',']
+          })
+        }); 
+</script>
+
+
+</body>
+</html>

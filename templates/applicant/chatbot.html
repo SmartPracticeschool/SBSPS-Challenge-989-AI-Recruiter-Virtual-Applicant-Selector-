@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- <link rel="stylesheet" href="./static/stylesheet/c4.css"> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./static/css/chatbot.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+    <script type="text/javascript">
+        window.history.forward(); 
+        function noBack() { 
+            window.history.forward(); 
+        } 
+    </script>
+</head>
+<body>
+    <div class="logo">
+                Virtual Applicant Selector
+    </div>
+    <div id="container">
+    <div id="chatbox">
+        <div id="box">
+            <div class="botText"><img src="./static/img/bot.png">Welcome to the <b>Interview Round</b>. My name is <b>InterviewBot</b>, you can simply call me <b>Bot</b> and I am going to take your interview today.<br><i>It's lovely to have a candidate like you !</i><br>We need your full concentration and attention here. So, let's get started...<br><center>Type 'exit' to leave.</center></div>
+        </div>
+        <div id="box">
+            <div class="botText"><img src="./static/img/bot.png">{{wish}}</div>
+        </div>
+    </div>
+    <div id="userInput">
+        <input id="textInput" type="text" name="msg" placeholder="Answer">
+        <input id="buttonInput" type="submit" value="Send">
+    </div>
+<script>
+
+    $(document).ready(function() {        
+        $('#exp2').click(function() {
+            inp = $(this).attr("value")
+            getBotResponse(inp)
+        });
+        $('#exp3').click(function() {
+            inp = $(this).attr("value")
+            getBotResponse(inp)
+        });
+        $("#buttonInput").click(function() {
+            inp = $("#textInput").val()
+            if (inp != '') {
+                getBotResponse(inp);
+            }
+        })
+    });    
+
+    function getBotResponse(rawText) {
+        var userHtml = '<div id="box2"><div class="userText"><img src="./static/img/{{gender}}.png">' + rawText + '</div></div>';
+        $("#textInput").val("");
+        $("#chatbox").append(userHtml);
+        document.getElementById('container').scrollTop = container.scrollHeight;
+        $.get("/get", { msg: rawText }).done(function(data) {
+            if (data == 'over') {
+                var botHtml = '<div id="box"><div class="botText"><img src="./static/img/bot.png">It was nice talking to you ! We will forward this to the company for your final selection.<br><center>All the best</center></div></div><div id="box"><div class="botText"><img src="./static/img/bot.png">You will be redirected to the next page in 5 seconds.</div></div>';
+                $("#textInput").prop("disabled", true);
+                setTimeout(function(){
+                    window.location.href = '/result of applying for the job with id={{jid}} is success'
+                }, 5000);
+            }
+            else if (data == 'experience?') {
+                var botHtml = '<div id="box"><div class="botText"><img src="./static/img/bot.png">How many years of experience do you have working in companies ?</div><center><button onclick="getBotResponse(\'0 - 1 year\')">0 - 1 year</button><button onclick="getBotResponse(\'2 - 4 years\')">2 - 4 years</button><button onclick="getBotResponse(\'5+ years\')">5+ years</button></center></div>';
+                $("#textInput").prop("disabled", true);
+            }
+            else if (data.substring(0,3) == 'btn') {
+                data = data.split('btn')[1];
+                opts = data.split('=')[1].split('@');
+                var botHtml = '<div id="box"><div class="botText"><img src="./static/img/bot.png">' + data.split('=')[0] + '</div><center><button onclick="getBotResponse(opts[0])">'+opts[0]+'</button><button onclick="getBotResponse(opts[1])">'+opts[1]+'</button><button onclick="getBotResponse(opts[2])">'+opts[2]+'</button><button onclick="getBotResponse(opts[3])">'+opts[3]+'</button></center></div>';
+                $("#textInput").prop("disabled", true);                
+            }
+            else {
+                $("#textInput").prop("disabled", false);
+                var botHtml = '<div id="box"><div class="botText"><img src="./static/img/bot.png">' + data + '</div></div>';
+            }
+            $("#chatbox").append(botHtml);
+            document.getElementById('container').scrollTop = container.scrollHeight;
+        });            
+    }
+
+    $('#textInput').on('paste', function(e) {
+        e.preventDefault();
+    });    
+    $("#textInput").keypress(function(e) {
+        if(e.which == 13) {
+            inp = $("#textInput").val()
+            if (inp != '') {
+                getBotResponse(inp);
+            }
+        }
+    });
+    $('#exp1').click(function() {
+        alert($(this).attr("value"))
+        // inp = $(this).attr("value")
+        // getBotResponse(inp)
+    });
+
+</script>
+</div>
+</body>
+</html>
