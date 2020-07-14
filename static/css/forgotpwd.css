@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+
+* {
+	box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("../img/bg3.jpg");
+    background-size: cover;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 100vh;
+	margin: 0;
+}
+
+.container {
+	background-color:#ed4264;
+	border-radius: 5px;
+	overflow: hidden;
+	width: 400px;
+	max-width: 100%;
+    border: 2px solid black;
+}
+
+.header {
+	border-bottom: 2px solid black;
+    background-color: #ffedbc;
+	padding: 20px 40px;
+}
+
+.header h2 {
+	margin: 0;
+    color: #000;
+    font-size: 2rem;
+
+}
+.fa-home{
+    margin-top: 5px;
+    float: right;
+    color: #000;
+}
+.fa-home:hover{
+    transform: scale(1.15);
+    transition: transform 0.5s ease-out;
+}
+.form {
+	padding: 30px 40px;	
+}
+
+.form-control {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
+}
+
+.form-control label {
+	display: inline-block;
+	margin-bottom: 5px;
+    color: yellow;
+    font-size: 1.3rem;
+}
+
+.form-control input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+    border: none;
+    outline: none;
+}
+.form-control input:focus {
+	border: 2px solid #000;
+}
+.form button {
+	background-color: #ffedbc;
+	border: 2px solid #ffedbc;
+	border-radius: 4px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+    cursor: pointer;
+}
+.form .btn{
+    text-decoration: none;
+    color: #000;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+    border: 2px solid black;
+}
+.form button:hover{
+    color: #ffedbc;
+    background-color: transparent;
+    transform: scale(0.98);
+    transition: transform 0.5s ease-out;
+    border: 2px solid #ffedbc;
+}
+.para{
+    color: white;
+    font-size: 1rem;
+}
+.para a{
+    border: none;     
+    outline: none;     
+    color: #ffedbc;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.register a:hover{
+    color: black;
+}

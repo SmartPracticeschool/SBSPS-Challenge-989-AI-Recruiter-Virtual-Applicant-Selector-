@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+body {
+   background: #000000;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.headers
+{
+    width: 100%;
+    height: 100vh;
+    background: #355C7D;
+    background: -webkit-linear-gradient(to left, #C06C84, #6C5B7B, #355C7D);
+    background: linear-gradient(to left, #C06C84, #6C5B7B, #355C7D);
+    clip-path: polygon(50% 0%, 100% 0, 100% 90%, 0 100%, 0 0);
+}
+nav
+{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    color: white;
+}
+.logo
+{
+    width: 50%;
+    height: 100px;
+}
+.logo h1
+{
+    padding-top: 13px;
+    padding-left: 50px;
+    font-size: 2.2rem;
+    color: lime;
+    text-transform: uppercase;
+    font-family: 'Aladin', cursive;
+}
+section 
+{
+    display: flex;
+}
+.left-side
+{
+    width: 45%;
+    height: auto;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.left-side img
+{
+    width: 600px;
+    height: 500px;
+}
+.right-side
+{
+    width: 55%;
+    height: 300px;
+    color: yellow;
+    text-shadow: 2px 2px 2px black;
+    text-align: center;
+    margin-top: 40px;
+    padding: 40px;
+}
+.right-side h1
+{
+    font-size: 50px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-family: 'Aladin', cursive;
+}
+.right-side p
+{
+    color: aqua;
+    font-size: 1.3rem;
+    padding: 30px 0;
+}
+.right-side button
+{
+    font-size: 17px;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+    background: linear-gradient(57deg,#00c6a7,#1e4d92);
+    border-radius: 4px;
+    padding: 20px 35px;
+}
+.right-side button:hover
+{
+    background: linear-gradient(57deg,#1e4d92,#00c6a7);
+    
+}
+
+
+.comp{
+    width: 100%;
+    min-height: 100vh;
+    background: #f953c6;
+    background: -webkit-linear-gradient(to right, #b91d73, #f953c6);
+    background: linear-gradient(to right, #b91d73, #f953c6);
+    clip-path: polygon(50% 5%, 100% 10%, 100% 100%, 0 90%, 0 0);
+}
+#topic{
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    
+}
+#topic h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: aqua;
+    text-shadow: 2px 2px 2px black;
+    font-family: 'Aladin', cursive;
+}
+#topic h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: blue;
+}
+#topic p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    padding: 10px;
+}
+
+.app{
+    width: 100%;
+    min-height: 100vh;
+    background: #ad5389;
+    background: -webkit-linear-gradient(to right, #3c1053, #ad5389);
+    background: linear-gradient(to right, #3c1053, #ad5389);
+    clip-path: polygon(50% 5%, 100% 0, 100% 90%, 0 100%, 0 10%);
+}
+#topic1{
+    width: 100%;
+    padding: 10px;
+    margin-top: 30px;
+    
+}
+#topic1 h1{
+    font-size: 3rem;
+    font-weight: bold;
+    color: antiquewhite;
+    float: right;
+    text-shadow: 2px 2px 2px black;
+    font-family: 'Aladin', cursive;
+}
+#topic1 h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: blue;
+    padding: 10px;
+}
+#topic1 p{
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: white;
+    padding: 10px;
+}
+
+footer{
+    width: 100%;
+    min-height: 100vh; 
+    background: #59C173;  
+    background: -webkit-linear-gradient(to right, #5D26C1, #a17fe0, #59C173); 
+    background: linear-gradient(to right, #5D26C1, #a17fe0, #59C173);
+    clip-path: polygon(50% 5%, 100% 10%, 100% 100%, 0 100%, 0 0);
+}
+.footer-header{
+    width: 50%;
+    padding: 20px;
+    float: right;
+    margin-top: 70px;
+}
+.footer-header h1{
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    color: yellow;
+    font-family: 'Aladin', cursive;
+}
+.footer-header img{
+    width: 90%;
+    height: 460px;
+    margin-left: 40px;
+}
+.forms{
+    width: 50%;
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+.forms h3{
+    font-size: 2.6rem;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    color: antiquewhite;
+    margin-top: 100px;
+    margin-bottom: 30px;
+    font-family: 'Aladin', cursive;
+}
+
+input[type=text], input[type=email], textarea {
+  width: 70%;
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-bottom: 16px;
+  resize: vertical;
+  margin-left: 100px;
+  border: none;
+  outline: none;
+  background: orange;
+}
+input[type=text]::placeholder{
+    color: black;
+    font-size: 1rem;
+}
+input[type=text]:focus{
+    color: black;
+    font-size: 1rem;
+    border: 2px solid white;
+}
+input[type=email]::placeholder{
+    color: black;
+    font-size: 1rem;
+}
+input[type=email]:focus{
+    color: black;
+    font-size: 1rem;
+    border: 2px solid white;
+}
+textarea::placeholder{
+    color: black;
+    font-size: 1rem;
+}
+textarea:focus{
+    color: black;
+    font-size: 1rem;
+    border: 2px solid white;
+}
+label{
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 10px;
+    color: white;
+    margin-left: 90px;
+}
+.btn1{
+    color: black;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 280px;
+    padding: 5px;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    border: 3px solid black;
+    box-shadow: 3px 3px 3px black;
+    transform: scale(0.98);
+}
+.btn1:hover{
+    background-color: yellow;
+    border: 3px solid black;
+    box-shadow: 3px 3px 10px black;
+    transform: scale(1);
+}
+.lists{
+    width: 60%;
+    padding: 20px;
+}
+.lists ul{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.nav-item{
+    list-style: none;
+    padding-left: 30px;
+}
+.nav-link{
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: white;
+    transition: 0.2s;
+}
+.nav-link:hover{
+    color: lime;
+    border-bottom: 2px solid lime;
+    box-shadow: 0px 0px 0px transparent;
+}
+.container{
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.card-container{
+    width: 300px;
+    height: 400px;
+}
+.card{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+.card-container:hover .card{
+    transform: rotateY(180deg);
+}
+.card figure{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card .front{
+    background: #11998e;
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+    background: linear-gradient(to right, #38ef7d, #11998e); 
+    color: white;
+
+}
+.card .back{
+    background: #C33764;
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);
+    background: linear-gradient(to right, #1D2671, #C33764);
+    color:  blue;
+    transform: rotateY(180deg);
+}
+img{
+    width: 300px;
+    height: 300px;
+}
+.card1 img{
+    width: 280px;
+    height: 300px;
+}
+.card1{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+.card-container:hover .card1{
+    transform: rotateY(180deg);
+}
+.card1 figure{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.card1 .front{
+    background: #11998e;
+    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);
+    background: linear-gradient(to right, #38ef7d, #11998e); 
+    color: white;
+
+}
+.card1 .back{
+    background: #C33764;
+    background: -webkit-linear-gradient(to right, #1D2671, #C33764);
+    background: linear-gradient(to right, #1D2671, #C33764);
+    color: blue;
+    transform: rotateY(180deg);
+}
+.colors{
+    font-size: 1.5rem;
+    color: greenyellow;
+} 

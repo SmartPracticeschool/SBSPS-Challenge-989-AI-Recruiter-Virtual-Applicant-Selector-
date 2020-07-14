@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("../img/bg22.jpg");
+    background-size: cover;
+}
+.heading{
+     text-align: center;
+     color: lime;
+     font-size: 3rem;
+     padding: 10px;
+    
+}
+#popup{
+    width: 600px;
+    transition: 0.5s;
+    border: 2px solid black;
+    top: 50%;
+    left: 50%;
+    transform: translate(60%,60%);
+    
+}
+.modal-header{
+    background-color: #ffedbc;
+    text-align: center;
+    border-bottom: 2px solid black;
+}
+.modal-header h1{
+    color: black;
+    font-size: 2rem;
+    font-weight: 800;
+    padding: 10px;
+}
+.modal-body{
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 10px;
+    background-color:#ed4264;
+}
+.btn{
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+}
+.modal-btn1{
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    background: green;
+    border: 2px solid white;
+}
+.modal-btn1:hover{
+    background: white;
+    color: green;
+    border: 2px solid green;
+    outline: none;
+}
+.modal-btn2{
+    border: 2px solid white;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    padding: 5px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    background: red;
+}
+.modal-btn2:hover{
+    background: white;
+    color: red;
+    border: 2px solid red;
+}
+a{
+    text-decoration: none;
+    color: white;
+    outline: none;
+}
+a:hover{
+    text-decoration: none;
+    outline: none;
+}
+[type="file"] {
+  height: 0;
+  width: 0;
+}
+
+[type="file"] + label {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  outline: none;
+  padding: 8px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+[type="file"] + label:hover {
+  background-color: transparent;
+}
+[type="file"] + label.btn-2 {
+  background-color: chocolate;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 2px solid white;
+}
+[type="file"] + label.btn-2::before {
+  color: #fff;
+  content: "";
+  line-height: 3.3;
+  position: absolute;
+  top: 0px;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+[type="file"] + label.btn-2:hover {
+  background-color: white;
+  border: 2px solid chocolate;
+  color: chocolate;
+}
+.logo h1
+{
+    padding: 15px;
+    font-size: 3.2rem;
+    color: aqua;
+    text-transform: uppercase;
+    font-family: 'Aladin', cursive;
+    text-align: center;
+}

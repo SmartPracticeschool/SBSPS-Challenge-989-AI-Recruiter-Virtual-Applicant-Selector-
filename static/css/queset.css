@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+
+.form {
+  padding: 0 16px;
+  max-width: 550px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 36px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Playfair Display', serif;
+}
+
+body {
+  background-size: cover; 
+  color: black;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url("../img/1.png");
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container {
+  position: relative;
+  background-color:#ed4264;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 1000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  border: 3px solid black;
+  margin-bottom: 20px;
+}
+.container:hover{
+    box-shadow: 0px 0px 10px white;
+}
+.card-title {
+  background-color: #ffedbc;
+  border-bottom: 3px solid black;
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: blue;
+  text-align: center;
+}
+.card-title h1 {
+  padding: 10px;
+}
+.logo h1
+{
+    padding: 15px;
+    text-align: center;
+    font-size: 3.2rem;
+    color: aqua;
+    text-transform: uppercase;
+    font-family: 'Aladin', cursive;
+}
+hr.style-seven {
+    overflow: visible; /* For IE */
+    height: 35px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+    width: 90%;
+    margin-top: 20px;
+    margin-left: 0px;
+}
+hr.style-seven:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 35px;
+    margin-top: -35px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+.biglist{
+    color: white;
+    font-size: 1.4rem;
+    margin: 10px;
+    margin-left: 60px;
+}
+
+.fa-check-circle{
+    color: aqua;
+}
+.list li{
+    font-size:1.2rem;
+    margin-left: 50px;
+    color: yellow;
+    text-align: justify;
+}
+.heading{
+    padding: 10px;
+    font-size: 1.2rem;
+    color: black;
+}
+#button{
+    color: lightblue;
+}
+.next {
+  float: right; border: 2px solid black; 
+  padding: 0;
+  margin-right: 10px; margin-top: 7px; border-radius: 20px;
+}
+.next:hover {
+  background-color: white;
+}

@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+body{
+    background-size: cover;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url("../img/1.png");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    margin-top: 100px;
+    padding: 20px;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    border: 3px solid yellow;
+}
+/* h1{
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: inherit;
+
+} */
+.ml6 {
+  position: relative;
+  font-weight: 900;
+  font-size: 2.5em;
+  color: white;
+}
+
+.ml6 .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.ml6 .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+.text{
+    color: yellow;
+    font-size: 1.5rem;
+    font-weight: 300;
+    padding: 10px;
+}
+a{
+    text-decoration: none;
+    background: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0;
+    cursor: pointer;
+    text-decoration: underline white;
+    color: aqua;
+}
+a:hover{
+    color: white;
+}
+.logo h1
+{
+    padding-top: 15px;
+    text-align: center;
+    font-size: 3.2rem;
+    color: aqua;
+    text-transform: uppercase;
+    font-family: 'Aladin', cursive;
+}

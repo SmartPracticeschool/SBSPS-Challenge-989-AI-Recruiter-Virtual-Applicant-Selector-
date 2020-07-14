@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Aladin&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+body{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6) ), url("../img/bg13.jpg");
+    background-size: cover;
+    overflow-x: hidden;
+}
+.navbar
+{     background: #360033;
+      background: -webkit-linear-gradient(to left, #0b8793, #360033);
+      background: linear-gradient(to left, #0b8793, #360033); 
+      padding: 10px;
+}
+.logo{
+    width: 50%;
+}
+
+.logo h1
+{
+    padding-left: 50px;
+    font-size: 2.2rem;
+}
+.logo h1 a{
+    font-size: 2.3rem;
+    font-weight:bold;
+    color: lime;
+    cursor: pointer;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Aladin', cursive;
+}
+.logo a:hover{
+    color: yellow;
+}
+.logo2{
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.btn{
+    border: 2px solid white;
+    color: white;
+    padding: 8px;
+    margin: 5px;
+    background: transparent;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+.btn:hover{
+    border: 2px solid black;
+    color: black;
+    background: white;
+    transform: scale(1);
+}
+.fa-sign-out-alt{
+    float: right;
+    margin-top: -45px;
+    color: white;
+    font-size: 2.4rem;
+    transform: scale(0.98);
+}
+.fa-sign-out-alt:hover{
+    color: yellow;
+    transform: scale(1);
+}
+.container{
+    color: white;
+    text-align: center;
+    font-size: 1.3rem;
+    padding: 10px;
+}
+.container1{
+    width: 100%;
+}
+a{
+    text-decoration: none;
+}
+.rows{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 310px 310px 310px 310px;
+    grid-auto-rows: 450px;
+    grid-gap: 10px;
+    padding-left: 20px;
+}
+.card-container{
+    width: 300px;
+    height: 400px;
+}
+.card{
+    width: 100%;
+    height: 100%;
+    transition: transform 1s ease-in-out;
+    transform-style: preserve-3d;
+}
+/* .card-container:hover .card{
+    transform: rotateX(180deg);
+} */
+.card div{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.5s;
+}
+.card figure{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: 1s;
+}
+.card-container:hover .front{
+    transform: rotateX(-180deg);
+}
+.card-container:hover .back{
+    transform: rotateX(0deg);
+}
+.card .front{
+    background: #ED4264;
+    background: -webkit-linear-gradient(to bottom, #FFEDBC, #ED4264); 
+    background: linear-gradient(to bottom, #FFEDBC, #ED4264); 
+    padding: 10px;
+    backface-visibility: hidden;
+    transform: rotateX(0deg);
+    transition: 1.2s;
+}
+.card .back{
+    background: #6441A5;
+    background: -webkit-linear-gradient(to right, #2a0845, #6441A5); 
+    background: linear-gradient(to right, #2a0845, #6441A5);
+    color:  blue;
+    padding: 10px;
+    transform: rotateX(0deg);
+    backface-visibility: hidden;
+    transform: rotateX(180deg);
+    transition: 1.2s;
+}
+img{
+    width: 200px;
+    height: 150px;
+}
+.front h1{
+    color: darkblue;
+    font-size: 2rem;
+    text-transform:uppercase; 
+}
+.front p{
+    color: blue;
+    font-size: 1rem;
+    text-align:justify; 
+
+}
+.card .back .bold{
+    font-weight: 300;
+    color: yellow;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+.card .back .bold1{
+    font-weight: 300;
+    color: orange;
+    text-transform: capitalize;
+    font-size: 1.7rem;
+    text-align: center;
+}
+.card .back .not-bold{
+    color: aqua;
+    text-transform: capitalize;
+    font-size: 1.3rem;
+}
+.card .back .btn1{
+    display: inline-block;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 10px;
+    margin-left: 20px;
+    outline: none;
+    color: orange;
+    font-size: 1.5rem;
+    background: white;
+    border: 2px solid orange;
+    cursor: pointer;
+}
+.card .back .btn1:hover{
+    color: white;
+    border: 2px solid white;
+    background: orange;
+    outline: none;
+}
