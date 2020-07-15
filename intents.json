@@ -23,11 +23,6 @@
          "context_set": ""
         },
 
-        {"tag": "personality",
-         "patterns": ["pq1", "pq2", "pq3", "pq4", "pq5"],
-         "responses": ["Answer please."],
-         "context_set": ""
-        },
         {"tag": "theory",
          "patterns": ["What is a Firewall ?", "What is meant by 127.0.0.1 ?", "Why can Bluetooth Equipment integrate Easily in TCP/IP network ?", "How do I convert a numeric IP address, 192.18.97.39 into a hostname like Java.sun.com ?", "Define Pipelining ?", "Define Brouter ?", "What is kernel ?", "What is the use of paging in operating system ?", "What is spooling ?", "What is a folder in Ubuntu ?", "What is a daemon ?", "What do you mean by transparent DBMS ?", "What do you understand by query optimization ?", "What do you understand by Proactive Update ?", "What do you understand by Retroactive Update ?", "How can you perform pattern matching in SQL ?", "What do you mean by Index Hunting ?", "Write the postfix form of the expression - (A + B) * (C - D).", "Which notations are used in Evaluation of Arithmetic Expressions using prefix and postfix forms ?", "Explain the jagged array.", "Define Hashing ?", "Which data structure is used in BFS algorithm ?"],
          "responses": ["Answer please."],
@@ -58,15 +53,9 @@
          "context_set": ""
         },
 
-        {"tag": "goodbye",
-         "patterns": ["cya", "See you later", "Goodbye", "I am Leaving", "Have a Good day"],
-         "responses": ["Sad to see you go :(", "Talk to you later", "Goodbye!"],
-         "context_set": ""
-        },
-
         {"tag": "name",
          "patterns": ["what is your name", "what should I call you", "whats your name?"],
-         "responses": ["You can call me Tim.", "I'm Tim!", "I'm Tim aka Tech With Tim."],
+         "responses": ["You can call me Bot.", "I'm Bot!", "I'm Bot aka InterviewBot."],
          "context_set": ""
         }
    ]
