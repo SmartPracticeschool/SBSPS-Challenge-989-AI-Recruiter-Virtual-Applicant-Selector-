@@ -7,7 +7,7 @@ Shortlisting of the applicants for the companies is a three step process:
   3. AI Interview - Our InterviewBot screens the applicant completely and predict the traits/skills which the applicant may possess
 ### Prerequisites
 1. Any operating system
-2. Use python 3.7 to get no errors
+2. Make sure you have python installed on your device
 3. Create an account in IBM cloudant and paste the credentials in app.py line 15
 4. Also create 5 partitioned databases in the cloudant for users, jobs, aptitude questions, technical questions and interview questions
 5. Create a new folder and open its directory in the command prompt
@@ -20,4 +20,4 @@ kudos
 ### References
 A) Video Presentation -> https://drive.google.com/file/d/1KWv1kgtfblcA_aUxxcQiwHZiKN5nm-SK/view?usp=sharing
 
-B) PPT -> https://drive.google.com/file/d/1CN_Zg33gigI-DQ2gBjXJ72gzp_-wXCsY/view?usp=sharing
+B) PPT -> https://drive.google.com/file/d/1mAPas7DI_BbsGCZtGmTxunUvaD8ieKmC/view?usp=sharing
