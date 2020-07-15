@@ -122,10 +122,6 @@ body {
   border:3px solid green;
 }
 
-
-
-/*RADIO*/
-
 .radio {
   padding: 20px;
   padding-left: 80px;
@@ -144,7 +140,6 @@ body {
   color: white;    
 }
 
-/* Hide the browser's default checkbox */
 .radio input {
   position: absolute;
   opacity: 0;
@@ -155,7 +150,6 @@ body {
 
 }
 
-/* Create a custom checkbox */
 .radiomark {
   position: absolute;
   top: 20;
@@ -166,29 +160,24 @@ body {
   background-color: yellow;
 }
 
-/* On mouse-over, add a grey background color */
 .radio:hover input ~ .radiomark {
   background-color: lightgreen;
 }
 
-/* When the checkbox is checked, add a blue background */
 .radio input:checked ~ .radiomark {
   background-color: green;
 }
 
-/* Create the checkmark/indicator (hidden when not checked) */
 .radiomark:after {
   content: "";
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
 .radio input:checked ~ .radiomark:after {
   display: block;
 }
 
-/* Style the checkmark/indicator */
 .radio .radiomark:after {
   left: 10px;
   top: 4px;
@@ -209,8 +198,6 @@ body {
     color: blue;
     display: inline-flex;
     float: right;
-/*     height: 70px;
-    width: 200px; */
 }
 .logo h1
 {
