@@ -42,11 +42,7 @@
                         <div class="card-container">
                             <div class="card">
                                 <div class="front">
-                                  {% if loop.index%2 == 0 %}
-                                    <img src="./static/img/clogo2.jpg" alt="Company logo">
-                                  {% else %}
-                                    <img src="./static/img/clogo1.png" alt="Company logo">
-                                  {% endif %}
+                                    <img src="./static/img/logo/{{job['company']}}.jpg" alt="Company Logo">
                                         <h1>{{job['company']}}</h1>
                                         {% for companies in companies %}
                                         {% if companies['doc']['company_name'] == job['company'] %}
@@ -85,11 +81,7 @@
                         <div class="card-container">
                             <div class="card">
                                 <div class="front">
-                                  {% if loop.index%2 == 0 %}
-                                    <img src="./static/img/clogo2.jpg" alt="Company logo">
-                                  {% else %}
-                                    <img src="./static/img/clogo1.png" alt="Company logo">
-                                  {% endif %}
+                                    <img src="./static/img/logo/{{job['company']}}.jpg" alt="Company Logo">
                                         <h1>{{job['company']}}</h1>
                                         {% for companies in companies %}
                                         {% if companies['doc']['company_name'] == job['company'] %}
