@@ -18,6 +18,6 @@ Shortlisting of the applicants for the companies is a three step process:
 
 kudos
 ### References
-A) Video Presentation -> https://drive.google.com/file/d/1KWv1kgtfblcA_aUxxcQiwHZiKN5nm-SK/view?usp=sharing
+A) Video Presentation -> https://drive.google.com/file/d/1Jzw4AxZjiVEnnbT1p5HrrUdXpFuY8T8P/view?usp=sharing
 
 B) PPT -> https://drive.google.com/file/d/1mAPas7DI_BbsGCZtGmTxunUvaD8ieKmC/view?usp=sharing
