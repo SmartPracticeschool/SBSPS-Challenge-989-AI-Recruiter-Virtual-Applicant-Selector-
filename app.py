@@ -21,6 +21,9 @@ dbAQ = client['apt_que']
 
 UPLOAD_FOLDER = 'static/resumes/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+UPLOAD_IMAGE = 'static/img/logo/'
+app.config['UPLOAD_IMAGE'] = UPLOAD_IMAGE
+
 user_list = []
 global seq_list
 
@@ -106,6 +109,10 @@ def Registration():
 			if cid in db1:
 				return render_template('registration.html', error='User already exists !')
 			else:
+				if 'logo' in request.files:
+					company_logo = request.files['logo']
+					company_logo.filename = name+".jpg"
+					company_logo.save(os.path.join(app.config['UPLOAD_IMAGE'], company_logo.filename))
 				new_doc = db1.create_document({'_id': cid, 'company_name': name, 'des': des, 'password': password})	
 				if new_doc.exists():
 					company_name = db1[cid]['company_name']
