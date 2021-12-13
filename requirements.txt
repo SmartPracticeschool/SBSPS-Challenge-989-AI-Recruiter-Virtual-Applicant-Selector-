@@ -1,6 +1,6 @@
 Flask==1.1.2
 cloudant==2.13.0
-lxml==4.5.1
+lxml==4.6.5
 bs4==0.0.1
 nltk==3.5
 numpy==1.19.0
